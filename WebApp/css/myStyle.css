@@ -1,0 +1,10 @@
+/* myStyle.css
+    Assignment 4
+
+    Revision History
+        Jaden Ahn, 2018.04.06 : Created
+*/
+label.error{
+    color: red;
+    font-weight: bold;
+}

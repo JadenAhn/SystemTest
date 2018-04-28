@@ -1,0 +1,157 @@
+<!-- index.html
+    Assignment 4
+
+    Revision History
+        Jaden Ahn, 2018.04.06 : Created
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Quality Car Sales</title>
+
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
+        <script src="js/lib/jquery.validate.js"></script>
+        <script src="js/facade.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/global.js"></script>
+        <link rel="stylesheet" href="css/myStyle.css">
+    </head>
+    <body>
+
+        <!--home page-->
+        <div data-role="page" id="pgHome">
+            <header data-role="header" data-position="fixed">
+                <h1>Home</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#pgHome" id="linkFromHomeToHome" data-icon="home" data-theme="a" class="ui-btn-active ui-state-persist">Home</a>
+                        </li>
+                        <li><a href="#pgRegister" id="linkFromHomeToRegister" data-icon="plus" data-theme="a">Register a car</a></li>
+                        <li><a href="#pgSearch" id="linkFromHomeToSearch" data-icon="search" data-theme="a">Search</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <h2 align="center" id="homeTitle">Welcome to Quality Car Sales!</h2>
+                <div align="center">
+                    <img src="img/home.jpg" height="225" width="225"/>
+                </div>
+                <h3>Register to sell</h3>
+                <p>Register your car and get a good price!</p>
+                <p>Click Register to register your car, or Search to see all the registered used cars</p>
+                <a href="#pgRegister" data-role="button">Register a car</a>
+                <a href="#pgSearch" data-role="button">Search</a>
+
+            </section>
+            <footer data-role="footer" data-position="fixed">
+                <h4> &copy; 2018 Jaden Ahn</h4>
+            </footer>
+        </div>
+
+
+        <!--Register page-->
+        <div data-role="page" id="pgRegister">
+            <header data-role="header" data-position="fixed">
+                <h1>Register a car</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#pgHome" id="linkFromRegisterToHome" data-icon="home" data-theme="a">Home</a>
+                        </li>
+                        <li><a href="#pgRegister" id="linkFromRegisterToRegister" data-icon="plus" data-theme="a" class="ui-btn-active ui-state-persist">Register a car</a></li>
+                        <li><a href="#pgSearch" id="linkFromRegisterToSearch" data-icon="search" data-theme="a">Search</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <h2 align="center" id="registerTitle">Register your car</h2>
+
+                <form id="frmRegister" name="frmRegister" data-ajax="false">
+                    <label for="txtName">Name</label>
+                    <input type="text" id="txtName" name="txtName" data-clear-btn="true"
+                           placeholder="Enter Seller Name">
+
+                    <label for="txtAddress">Address</label>
+                    <input type="text" id="txtAddress" name="txtAddress" data-clear-btn="true"
+                           placeholder="Enter Address">
+
+                    <label for="txtCity">City</label>
+                    <input type="text" id="txtCity" name="txtCity" data-clear-btn="true"
+                           placeholder="Enter City">
+
+                    <label for="txtPhone">Phone Number</label>
+                    <input type="text" id="txtPhone" name="txtPhone" data-clear-btn="true"
+                           placeholder="123-123-1234 or (123)123-1234">
+
+                    <label for="txtEmail">Email</label>
+                    <input type="email" id="txtEmail" name="txtEmail" data-clear-btn="true" placeholder="Enter Email">
+
+                    <label for="vehicleInfo">Vehicle Information</label>
+                    <fieldset data-role="controlgroup" data-type="vertical" id="vehicleInfo">
+                        <input type="text" id="txtMake" name="txtMake" data-clear-btn="true" placeholder="Enter Vehicle Make">
+                        <input type="text" id="txtModel" name="txtModel" data-clear-btn="true" placeholder="Enter Vehicle Model">
+                        <input type="number" id="txtYear" name="txtYear" data-clear-btn="true" placeholder="Enter Vehicle Year">
+                    </fieldset>
+                    <button type="button" id="btnRegister" name="btnRegister" data-icon="plus" data-theme="b">Register
+                    </button>
+                </form>
+            </section>
+            <footer data-role="footer" data-position="fixed">
+                <h4> &copy; 2018 Jaden Ahn</h4>
+            </footer>
+        </div>
+
+
+        <!--Search page-->
+        <div data-role="page" id="pgSearch">
+            <header data-role="header" data-position="fixed">
+                <h1>Search for a used car</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#pgHome" id="linkFromSearchToHome" data-icon="home" data-theme="a">Home</a>
+                        </li>
+                        <li><a href="#pgRegister" id="linkFromSearchToRegister" data-icon="plus" data-theme="a">Register a car</a></li>
+                        <li><a href="#pgSearch" id="linkFromSearchToSearch" data-icon="search" data-theme="a" class="ui-btn-active ui-state-persist">Search</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <h2 align="center" id="searchTitle">Registered used cars</h2>
+                <ul id="searchResult" name="searchResult" data-role="listview" class="ui-listview-inset">
+                </ul>
+                <button type="button" id="btnClearDatabase" name="btnClearDatabase" data-icon="plus" data-theme="b">Clear Database
+                </button>
+            </section>
+            <footer data-role="footer" data-position="fixed">
+                <h4> &copy; 2018 Jaden Ahn</h4>
+            </footer>
+        </div>
+
+
+        <!--Registered Info page-->
+        <div data-role="page" id="pgRegisteredInfo">
+            <header data-role="header" data-position="fixed">
+                <h1>Register a car</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#pgHome" data-icon="home" data-theme="a">Home</a></li>
+                        <li><a href="#pgRegister" data-icon="plus" data-theme="a"
+                               class="ui-btn-active ui-state-persist">Register a car</a></li>
+                        <li><a href="#pgSearch" data-icon="search" data-theme="a">Search</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <h2 align="center">Thank you for registering your car</h2>
+                <ul id="registerResult" name="registerResult" data-role="listview" class="ui-listview-inset">
+                </ul>
+                <a href="#pgRegister" data-role="button">Register another car</a>
+            </section>
+            <footer data-role="footer" data-position="fixed">
+                <h4> &copy; 2018 Jaden Ahn</h4>
+            </footer>
+        </div>
+    </body>
+</html>
